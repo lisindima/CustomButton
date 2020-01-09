@@ -14,11 +14,13 @@ public struct CustomButton : View {
     var label: String
     var action: () -> Void
     var loading: Bool = false
+    var colorButton: Color
     
-    public init(label: String, action: @escaping () -> Void, loading: Bool = false) {
+    public init(label: String, action: @escaping () -> Void, loading: Bool = false, colorButton: Color) {
         self.label = label
         self.action = action
         self.loading = loading
+        self.colorButton = colorButton
         
     }
     
@@ -34,7 +36,7 @@ public struct CustomButton : View {
             }
         }
         .padding()
-        .background(Color.blue)
+        .background(colorButton)
         .cornerRadius(8)
     }
 }
